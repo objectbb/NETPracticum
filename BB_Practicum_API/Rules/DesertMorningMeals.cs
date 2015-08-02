@@ -8,8 +8,6 @@ namespace BB_Practicum_API.Rules
 {
     public class DesertMorningMeals : IRule
     {
-        private string timeofday;
-
         public string ReturnMsg(IDish dish, int? pos = null) 
         {
             return (dish.TypeId == 4 && dish.TimeofDay == "night") ? "error" : String.Empty;

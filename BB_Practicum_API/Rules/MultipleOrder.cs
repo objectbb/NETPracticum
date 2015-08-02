@@ -8,12 +8,8 @@ namespace BB_Practicum_API.Rules
 {
     public class MultipleOrder : IRule
     {
-
         private List<Order> rs;
-        private string name;
-        private string timeofday;
-
-
+  
         public MultipleOrder(List<Order> rs)
         {
             this.rs = rs;
