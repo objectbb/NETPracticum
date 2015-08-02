@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BB_Practicum_API.Rules
 {
-    public class MultipleOrder : AbstractRuleMultipleOrder
+    public class MultipleOrder : IRule
     {
 
         private List<Order> rs;
@@ -19,7 +19,7 @@ namespace BB_Practicum_API.Rules
             this.rs = rs;
         }
 
-        public override string ReturnMsg(IDish dish, int? pos = null)
+        public string ReturnMsg(IDish dish, int? pos = null)
         {
 
             List<int> duplist = new List<int>();
@@ -28,7 +28,7 @@ namespace BB_Practicum_API.Rules
             {
                 var item = t.Dish;
 
-                if (t.Dish.Name == "coffee" || t.Dish.Name == "potato")
+                if (t.Dish.Name.ToLower() == "coffee" || t.Dish.Name.ToLower() == "potato")
                     return false;
 
                 duplist.Add(t.Dish.TypeId);
@@ -36,7 +36,7 @@ namespace BB_Practicum_API.Rules
                 return false;
             });
 
-            return (duplist.Where(d => d == dish.TypeId).Count() > 1) ? ErrorMsg : String.Empty;
+            return (duplist.Where(d => d == dish.TypeId).Count() > 1) ? "error" : String.Empty;
         }
 
     }

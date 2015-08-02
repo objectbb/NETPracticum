@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace BB_Practicum_API.Rules
 {
-    public class DesertMorningMeals : AbstractRule
+    public class DesertMorningMeals : IRule
     {
         private string timeofday;
 
-        public override string ReturnMsg(IDish dish, int? pos = null) 
+        public string ReturnMsg(IDish dish, int? pos = null) 
         {
-            return (dish.TypeId == 4 && dish.TimeofDay == "night") ? ErrorMsg : String.Empty;
+            return (dish.TypeId == 4 && dish.TimeofDay == "night") ? "error" : String.Empty;
         }
         
     }

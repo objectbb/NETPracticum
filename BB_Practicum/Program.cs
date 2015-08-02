@@ -12,13 +12,22 @@ namespace BB_Practicum
     {
         static void Main(string[] args)
         {
-            var timeofday = "night";
 
-            var orders = new[] { new { TypeId = 1 }, new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 3 }, new { TypeId = 5 } }.ToList();
+            var inputarray = args;
+
+            if(String.IsNullOrEmpty(inputarray[0])){
+                Console.WriteLine("Wrong input i.e. morning,1,2,3");
+                return;
+            }
+
+            var timeofday = inputarray[0].TrimEnd(',').ToLower();
+            var orders = inputarray.Skip(1).Select(t => { return new { TypeId = int.Parse(t.TrimEnd(',')) }; }).ToList();
+
+            //var orders = new[] { new { TypeId = 1 }, new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 3 }, new { TypeId = 5 } }.ToList();
 
             List<IDish> dishes = new List<IDish>();
             dishes.Add(new Dish("morning", "eggs", 1, "entree", false));
-            dishes.Add(new Dish("morning", "toast", 2, "side", false));
+            dishes.Add(new Dish("morning", "Toast", 2, "side", false));
             dishes.Add(new Dish("morning", "coffee", 3, "drink", true));
 
             dishes.Add(new Dish("night", "steak", 1, "entree", false));
@@ -33,12 +42,14 @@ namespace BB_Practicum
             IRule[] rules = { new MultipleOrder(rs), new DesertMorningMeals()};
 
             int pos = 0;
-            rs.Any(t =>
+            var output = rs.Select(t =>
             {
-                if(t.Dish == null)
+                if (t.Dish == null)
                 {
-                    Console.WriteLine("error");
-                    return true;
+                    // Console.Write("error");
+                    // return true;
+
+                    return "error";
                 }
 
                 var anyerrors = rules.TakeWhile((r, index) => !String.IsNullOrEmpty(r.ReturnMsg(t.Dish, pos)));
@@ -46,14 +57,18 @@ namespace BB_Practicum
 
                 if (anyerrors.Count() > 0)
                 {
-                    Console.WriteLine("error");
-                    return true;
+                    return "error";
                 }
 
-                Console.WriteLine(t.Dish.Name);
-                return false;
+                //Console.Write(t.Dish.Name.ToLower());
 
-            });
+                return t.Dish.Name.ToLower();
+                // return false;
+
+            }).ToArray<string>();
+
+            Console.Write(String.Join(", ",output));
+
 
         }
     }

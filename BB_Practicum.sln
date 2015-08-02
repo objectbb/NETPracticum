@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_Practicum", "BB_Practicu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_Practicum_API", "BB_Practicum_API\BB_Practicum_API.csproj", "{1D686853-AF02-496E-8F55-9F7C301E222F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB_Practicum_Test", "BB_Practicum_Test\BB_Practicum_Test.csproj", "{49DD4515-E33F-48A8-819F-24EA81CB408C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{1D686853-AF02-496E-8F55-9F7C301E222F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D686853-AF02-496E-8F55-9F7C301E222F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D686853-AF02-496E-8F55-9F7C301E222F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49DD4515-E33F-48A8-819F-24EA81CB408C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49DD4515-E33F-48A8-819F-24EA81CB408C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49DD4515-E33F-48A8-819F-24EA81CB408C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49DD4515-E33F-48A8-819F-24EA81CB408C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

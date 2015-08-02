@@ -41,11 +41,9 @@
   <ItemGroup>
     <Compile Include="Rules\AbstractRule.cs" />
     <Compile Include="Rules\AbstractRuleMultipleOrder.cs" />
-    <Compile Include="Rules\MultipleOrder.cs" />
-    <Compile Include="Rules\WrongDishTimeofDay.cs" />
-    <Compile Include="Rules\IRule.cs" />
     <Compile Include="Rules\DesertMorningMeals.cs" />
-    <Compile Include="Rules\MultipleOrderExcept.cs" />
+    <Compile Include="Rules\MultipleOrder.cs" />
+    <Compile Include="Rules\IRule.cs" />
     <Compile Include="Dish.cs" />
     <Compile Include="IDish.cs" />
     <Compile Include="Order.cs" />
