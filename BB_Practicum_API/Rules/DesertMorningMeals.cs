@@ -8,7 +8,7 @@ namespace BB_Practicum_API.Rules
 {
     public class DesertMorningMeals : IRule
     {
-        public bool ReturnMsg(IDish dish, int? pos = null) 
+        public bool IsBroken(IDish dish, int? pos = null) 
         {
             return (dish.TypeId == 4 && dish.TimeofDay == "night");
         }

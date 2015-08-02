@@ -3,6 +3,6 @@ namespace BB_Practicum_API.Rules
 {
     public interface IRule
     {
-        bool ReturnMsg(IDish dish, int? pos=null);
+        bool IsBroken(IDish dish, int? pos=null);
     }
 }

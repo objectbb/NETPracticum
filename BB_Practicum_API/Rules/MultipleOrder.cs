@@ -15,7 +15,7 @@ namespace BB_Practicum_API.Rules
             this.rs = rs;
         }
 
-        public bool ReturnMsg(IDish dish, int? pos = null)
+        public bool IsBroken(IDish dish, int? pos = null)
         {
 
             List<int> duplist = new List<int>();
@@ -24,10 +24,10 @@ namespace BB_Practicum_API.Rules
             {
                 var item = t.Dish;
 
-                if (t.Dish.Name.ToLower() == "coffee" || t.Dish.Name.ToLower() == "potato")
+                if (item.Name.ToLower() == "coffee" || item.Name.ToLower() == "potato")
                     return false;
 
-                duplist.Add(t.Dish.TypeId);
+                duplist.Add(item.TypeId);
 
                 return false;
             });
