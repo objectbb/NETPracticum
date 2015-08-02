@@ -35,7 +35,7 @@ namespace BB_Practicum_Test
                 (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
                         OrderBy(t => t.TypeId).ToList<Order>();
 
-            Assert.AreEqual(TestRules(new MultipleOrder(rs)), "error");
+            Assert.AreEqual(TestRules(new MultipleOrder(rs),2), "error");
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace BB_Practicum_Test
                 (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
                         OrderBy(t => t.TypeId).ToList<Order>();
 
-             Assert.AreEqual(TestRules(new MultipleOrder(rs)),"");
+             Assert.AreEqual(TestRules(new MultipleOrder(rs),2),"");
         }
 
         [TestMethod]
@@ -63,12 +63,41 @@ namespace BB_Practicum_Test
                 (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
                         OrderBy(t => t.TypeId).ToList<Order>();
 
-            Assert.AreEqual(TestRules(new MultipleOrder(rs)), "");
+            Assert.AreEqual(TestRules(new MultipleOrder(rs),2), "");
         }
 
-        public string TestRules(IRule rule)
+        [TestMethod]
+        public void TestNoErrorsRepeatCoffee()
         {
-            return rule.ReturnMsg((new Dish("night", "steak", 1, "entree", false)), 2);
+            var input = new[] { new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 3 }, new { TypeId = 3 }, new { TypeId = 3 } }.ToList();
+
+            var timeofday = "morning";
+
+            var rs = input.GroupJoin(dishes, o => new { o.TypeId, TimeofDay = timeofday }, d => new { d.TypeId, d.TimeofDay },
+                (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
+                        OrderBy(t => t.TypeId).ToList<Order>();
+
+            Assert.AreEqual(TestRules(new MultipleOrder(rs), 5), "");
+        }
+
+        [TestMethod]
+        public void TestNoErrorsRepeatPotato()
+        {
+            var input = new[] { new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 2 }, new { TypeId = 4 }}.ToList();
+
+            var timeofday = "night";
+
+            var rs = input.GroupJoin(dishes, o => new { o.TypeId, TimeofDay = timeofday }, d => new { d.TypeId, d.TimeofDay },
+                (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
+                        OrderBy(t => t.TypeId).ToList<Order>();
+
+            Assert.AreEqual(TestRules(new MultipleOrder(rs), 5), "");
+        }
+
+
+        public string TestRules(IRule rule, int pos)
+        {
+            return rule.ReturnMsg((new Dish("night", "steak", 1, "entree", false)), pos);
         }
     }
 }

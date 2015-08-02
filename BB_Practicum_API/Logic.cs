@@ -30,7 +30,10 @@ namespace BB_Practicum_API
 
                    return t.Dish.Name.ToLower();
 
-               }).ToArray<string>();
+               }).GroupBy(v => v).ToList().Select(t =>
+                {
+                    return (t.Count() > 1) ? String.Format("{0}(x{1})", t.Key, t.Count()) :   t.Key;
+                }).ToArray<string>();
 
             return String.Join(", ", output);
         }
