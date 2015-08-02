@@ -24,7 +24,7 @@ namespace BB_Practicum_API
                {
                    if (t.Dish == null) return "error";
 
-                   bool anyerrors = rules.Any((r) => r.IsBroken(t.Dish, pos));
+                   bool anyerrors = rules.Any((r) => r.IsCorrect(t.Dish, pos));
 
                    if (anyerrors) return "error";
 

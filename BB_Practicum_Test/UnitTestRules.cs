@@ -97,7 +97,7 @@ namespace BB_Practicum_Test
 
         public bool TestRules(IRule rule, int pos)
         {
-            return rule.IsBroken((new Dish("night", "steak", 1, "entree", false)), pos);
+            return rule.IsCorrect((new Dish("night", "steak", 1, "entree", false)), pos);
         }
     }
 }

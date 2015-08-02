@@ -7,11 +7,11 @@ using System.Linq;
 namespace BB_Practicum_Test
 {
     [TestClass]
-    public class UnitTestOrder
+    public class UnitTestLogic
     {
         List<IDish> dishes;
 
-        public UnitTestOrder()
+        public UnitTestLogic()
         {
             dishes = new List<IDish>();
             dishes.Add(new Dish("morning", "eggs", 1, "entree", false));
@@ -25,7 +25,7 @@ namespace BB_Practicum_Test
         }
 
         [TestMethod]
-        public void TestOrders2xPotato()
+        public void TestLogic2xPotato()
         {
             var input = new[] { new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 2 },  new { TypeId = 4 }  }.ToList();
 
@@ -43,7 +43,7 @@ namespace BB_Practicum_Test
         }
 
         [TestMethod]
-        public void TestOrders3xCoffee()
+        public void TestLogic3xCoffee()
         {
             var input = new[] { new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 3 }, new { TypeId = 3 }, new { TypeId = 3 } }.ToList();
 

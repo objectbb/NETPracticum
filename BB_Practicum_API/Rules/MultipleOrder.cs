@@ -15,7 +15,7 @@ namespace BB_Practicum_API.Rules
             this.rs = rs;
         }
 
-        public bool IsBroken(IDish dish, int? pos = null)
+        public bool IsCorrect(IDish dish, int? pos = null)
         {
 
             List<int> duplist = new List<int>();
