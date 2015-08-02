@@ -14,7 +14,8 @@ namespace BB_Practicum
         {
             var inputarray = args;
 
-            if(String.IsNullOrEmpty(inputarray[0])){
+            if (inputarray.Count() < 2)
+            {
                 Console.WriteLine("Wrong input i.e. morning, 1, 2, 3");
                 return;
             }
