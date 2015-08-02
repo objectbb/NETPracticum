@@ -1,0 +1,8 @@
+c:\users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\bin\Debug\BB_Practicum.exe.config
+c:\users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\obj\Debug\BB_Practicum.csprojResolveAssemblyReference.cache
+c:\users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\bin\Debug\BB_Practicum.exe
+c:\users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\bin\Debug\BB_Practicum.pdb
+c:\users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\bin\Debug\BB_Practicum_API.dll
+c:\users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\bin\Debug\BB_Practicum_API.pdb
+c:\users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\obj\Debug\BB_Practicum.exe
+c:\users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\obj\Debug\BB_Practicum.pdb
