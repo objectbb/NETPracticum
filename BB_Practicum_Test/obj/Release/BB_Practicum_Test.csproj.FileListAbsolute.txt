@@ -1,0 +1,5 @@
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum_Test.dll
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum_Test.pdb
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_Test\obj\Release\BB_Practicum_Test.csprojResolveAssemblyReference.cache
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_Test\obj\Release\BB_Practicum_Test.dll
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_Test\obj\Release\BB_Practicum_Test.pdb

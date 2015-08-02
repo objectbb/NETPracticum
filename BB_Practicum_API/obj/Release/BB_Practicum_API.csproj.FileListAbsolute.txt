@@ -1,0 +1,5 @@
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum_API.dll
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum_API.pdb
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_API\obj\Release\BB_Practicum_API.csprojResolveAssemblyReference.cache
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_API\obj\Release\BB_Practicum_API.dll
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_API\obj\Release\BB_Practicum_API.pdb

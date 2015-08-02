@@ -5,3 +5,5 @@ C:\Users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicu
 C:\Users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_Test\obj\Debug\BB_Practicum_Test.csprojResolveAssemblyReference.cache
 C:\Users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_Test\obj\Debug\BB_Practicum_Test.dll
 C:\Users\objectbb\documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum_Test\obj\Debug\BB_Practicum_Test.pdb
+C:\Users\objectbb\Documents\Visual Studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum_Test.dll
+C:\Users\objectbb\Documents\Visual Studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum_Test.pdb

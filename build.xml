@@ -1,0 +1,16 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <BuildArtifactsDir Include="BuildArtifacts\" />
+    <SolutionFile Include="BB_Practicum.sln" />
+  </ItemGroup>
+
+  <Target Name="Compile">
+    <MSBuild Projects="@(SolutionFile)" Targets="Rebuild"
+             Properties="OutDir=%(BuildArtifactsDir.FullPath);" />
+  </Target>
+
+  <Target Name="RunTests">
+    <Exec Command='"mstest.exe" /testcontainer:"BuildArtifacts\BB_Practicum_Test.dll"' />
+  </Target>
+
+</Project>

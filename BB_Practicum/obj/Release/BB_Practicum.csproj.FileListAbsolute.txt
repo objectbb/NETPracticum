@@ -1,0 +1,6 @@
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum.exe.config
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum.exe
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BuildArtifacts\BB_Practicum.pdb
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\obj\Release\BB_Practicum.csprojResolveAssemblyReference.cache
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\obj\Release\BB_Practicum.exe
+c:\Users\objectbb\Documents\visual studio 2012\Projects\BB_Practicum\BB_Practicum\obj\Release\BB_Practicum.pdb
