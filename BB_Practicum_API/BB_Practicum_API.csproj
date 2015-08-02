@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ILogic.cs" />
+    <Compile Include="Logic.cs" />
     <Compile Include="Rules\AbstractRule.cs" />
     <Compile Include="Rules\AbstractRuleMultipleOrder.cs" />
     <Compile Include="Rules\DesertMorningMeals.cs" />

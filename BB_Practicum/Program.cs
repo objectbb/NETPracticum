@@ -12,18 +12,15 @@ namespace BB_Practicum
     {
         static void Main(string[] args)
         {
-
             var inputarray = args;
 
             if(String.IsNullOrEmpty(inputarray[0])){
-                Console.WriteLine("Wrong input i.e. morning,1,2,3");
+                Console.WriteLine("Wrong input i.e. morning, 1, 2, 3");
                 return;
             }
 
             var timeofday = inputarray[0].TrimEnd(',').ToLower();
             var orders = inputarray.Skip(1).Select(t => { return new { TypeId = int.Parse(t.TrimEnd(',')) }; }).ToList();
-
-            //var orders = new[] { new { TypeId = 1 }, new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 3 }, new { TypeId = 5 } }.ToList();
 
             List<IDish> dishes = new List<IDish>();
             dishes.Add(new Dish("morning", "eggs", 1, "entree", false));
@@ -41,35 +38,9 @@ namespace BB_Practicum
 
             IRule[] rules = { new MultipleOrder(rs), new DesertMorningMeals()};
 
-            int pos = 0;
-            var output = rs.Select(t =>
-            {
-                if (t.Dish == null)
-                {
-                    // Console.Write("error");
-                    // return true;
-
-                    return "error";
-                }
-
-                var anyerrors = rules.TakeWhile((r, index) => !String.IsNullOrEmpty(r.ReturnMsg(t.Dish, pos)));
-                pos++;
-
-                if (anyerrors.Count() > 0)
-                {
-                    return "error";
-                }
-
-                //Console.Write(t.Dish.Name.ToLower());
-
-                return t.Dish.Name.ToLower();
-                // return false;
-
-            }).ToArray<string>();
-
-            Console.Write(String.Join(", ",output));
-
-
+            ILogic logic = new Logic(rs, rules);
+            Console.Write(logic.Execute());
+  
         }
     }
 }
