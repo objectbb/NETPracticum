@@ -24,18 +24,30 @@ namespace BB_Practicum_API
                {
                    if (t.Dish == null) return "error";
 
-                   var anyerrors = rules.TakeWhile((r, index) => !String.IsNullOrEmpty(r.ReturnMsg(t.Dish, pos)));
+                   bool anyerrors = rules.Any((r) => r.ReturnMsg(t.Dish, pos));
 
-                   if (anyerrors.Count() > 0) return "error";
+                   if (anyerrors) return "error";
 
                    return t.Dish.Name.ToLower();
 
-               }).GroupBy(v => v).ToList().Select(t =>
+               }).GroupBy(v => v).Select(t =>
                 {
-                    return (t.Count() > 1) ? String.Format("{0}(x{1})", t.Key, t.Count()) :   t.Key;
-                }).ToArray<string>();
+                    return (t.Count() > 1 && t.Key != "error") ? String.Format("{0}(x{1})", t.Key, t.Count()) : t.Key;
+                }).ToList<string>();
 
-            return String.Join(", ", output);
+
+            var sb = new StringBuilder();
+            output.FirstOrDefault(t =>
+                {
+                    sb.Append(t + ", ");
+
+                    if (t == "error") return true;
+
+                    return false;
+                });
+
+            return sb.ToString().TrimEnd(' ', ',');
         }
+   
     }
 }

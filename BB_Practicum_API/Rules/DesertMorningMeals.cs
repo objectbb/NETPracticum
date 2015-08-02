@@ -8,9 +8,9 @@ namespace BB_Practicum_API.Rules
 {
     public class DesertMorningMeals : IRule
     {
-        public string ReturnMsg(IDish dish, int? pos = null) 
+        public bool ReturnMsg(IDish dish, int? pos = null) 
         {
-            return (dish.TypeId == 4 && dish.TimeofDay == "night") ? "error" : String.Empty;
+            return (dish.TypeId == 4 && dish.TimeofDay == "night");
         }
         
     }

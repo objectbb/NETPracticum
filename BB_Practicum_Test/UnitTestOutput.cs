@@ -60,7 +60,40 @@ namespace BB_Practicum_Test
             Assert.AreEqual(logic.Execute(), "eggs, toast, coffee");
         }
 
- 
-    
+        [TestMethod]
+        public void TestOrdersError()
+        {
+            var input = new[] { new { TypeId = 1 }, new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 3 }, new { TypeId = 5} }.ToList();
+
+            var timeofday = "night";
+
+            var rs = input.GroupJoin(dishes, o => new { o.TypeId, TimeofDay = timeofday }, d => new { d.TypeId, d.TimeofDay },
+                (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
+                        OrderBy(t => t.TypeId).ToList<Order>();
+
+            IRule[] rules = { new MultipleOrder(rs) };
+
+            ILogic logic = new Logic(rs, rules);
+
+            Assert.AreEqual(logic.Execute(), "steak, error");
+        }
+
+        [TestMethod]
+        public void TestOrdersError2()
+        {
+            var input = new[] { new { TypeId = 1 }, new { TypeId = 2 }, new { TypeId = 3 }, new { TypeId = 5 } }.ToList();
+
+            var timeofday = "night";
+
+            var rs = input.GroupJoin(dishes, o => new { o.TypeId, TimeofDay = timeofday }, d => new { d.TypeId, d.TimeofDay },
+                (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
+                        OrderBy(t => t.TypeId).ToList<Order>();
+
+            IRule[] rules = { new MultipleOrder(rs) };
+
+            ILogic logic = new Logic(rs, rules);
+
+            Assert.AreEqual(logic.Execute(), "steak, potato, wine, error");
+        }
     }
 }

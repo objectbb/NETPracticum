@@ -35,7 +35,7 @@ namespace BB_Practicum_Test
                 (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
                         OrderBy(t => t.TypeId).ToList<Order>();
 
-            Assert.AreEqual(TestRules(new MultipleOrder(rs),2), "error");
+            Assert.IsTrue(TestRules(new MultipleOrder(rs),2));
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace BB_Practicum_Test
                 (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
                         OrderBy(t => t.TypeId).ToList<Order>();
 
-             Assert.AreEqual(TestRules(new MultipleOrder(rs),2),"");
+             Assert.IsTrue(TestRules(new MultipleOrder(rs),5));
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace BB_Practicum_Test
                 (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
                         OrderBy(t => t.TypeId).ToList<Order>();
 
-            Assert.AreEqual(TestRules(new MultipleOrder(rs),2), "");
+            Assert.IsTrue(TestRules(new MultipleOrder(rs), 2));
         }
 
         [TestMethod]
@@ -77,7 +77,7 @@ namespace BB_Practicum_Test
                 (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
                         OrderBy(t => t.TypeId).ToList<Order>();
 
-            Assert.AreEqual(TestRules(new MultipleOrder(rs), 5), "");
+            Assert.IsTrue(TestRules(new MultipleOrder(rs), 5));
         }
 
         [TestMethod]
@@ -91,11 +91,11 @@ namespace BB_Practicum_Test
                 (o, d) => new Order { TypeId = o.TypeId, Dish = d.DefaultIfEmpty().FirstOrDefault() }).
                         OrderBy(t => t.TypeId).ToList<Order>();
 
-            Assert.AreEqual(TestRules(new MultipleOrder(rs), 5), "");
+            Assert.IsTrue(TestRules(new MultipleOrder(rs), 4));
         }
 
 
-        public string TestRules(IRule rule, int pos)
+        public bool TestRules(IRule rule, int pos)
         {
             return rule.ReturnMsg((new Dish("night", "steak", 1, "entree", false)), pos);
         }

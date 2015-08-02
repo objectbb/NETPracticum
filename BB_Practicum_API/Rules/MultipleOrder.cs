@@ -15,7 +15,7 @@ namespace BB_Practicum_API.Rules
             this.rs = rs;
         }
 
-        public string ReturnMsg(IDish dish, int? pos = null)
+        public bool ReturnMsg(IDish dish, int? pos = null)
         {
 
             List<int> duplist = new List<int>();
@@ -32,7 +32,7 @@ namespace BB_Practicum_API.Rules
                 return false;
             });
 
-            return (duplist.Where(d => d == dish.TypeId).Count() > 1) ? "error" : String.Empty;
+            return (duplist.Where(d => d == dish.TypeId).Count() > 0);
         }
 
     }
