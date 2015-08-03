@@ -20,6 +20,8 @@ namespace BB_Practicum_API
 
         public string Execute()
         {
+            var sb = new StringBuilder();
+
             var output = order.Select((t, pos) =>
                {
                    if (t.Dish == null) return "error";
@@ -33,11 +35,7 @@ namespace BB_Practicum_API
                }).GroupBy(v => v).Select(t =>
                 {
                     return (t.Count() > 1 && t.Key != "error") ? String.Format("{0}(x{1})", t.Key, t.Count()) : t.Key;
-                }).ToList<string>();
-
-
-            var sb = new StringBuilder();
-            output.FirstOrDefault(t =>
+                }).FirstOrDefault(t =>
                 {
                     sb.Append(t + ", ");
 
