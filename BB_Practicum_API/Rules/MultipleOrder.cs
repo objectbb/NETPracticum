@@ -32,7 +32,7 @@ namespace BB_Practicum_API.Rules
                 return false;
             });
 
-            return (duplist.Where(d => d == dish.TypeId).Count() > 0);
+            return duplist.Exists(d => d == dish.TypeId);
         }
 
     }
