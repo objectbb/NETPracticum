@@ -17,22 +17,8 @@ namespace BB_Practicum_API.Rules
 
         public bool IsCorrect(IDish dish, int? pos = null)
         {
-
-            List<int> duplist = new List<int>();
-
-            rs.Take(pos.Value).Any(t =>
-            {
-                var item = t.Dish;
-
-                if (item.Name.ToLower() == "coffee" || item.Name.ToLower() == "potato")
-                    return false;
-
-                duplist.Add(item.TypeId);
-
-                return false;
-            });
-
-            return duplist.Exists(d => d == dish.TypeId);
+            return rs.Take(pos.Value).Any(t =>
+                (t.Dish.Name.ToLower() != "coffee" || t.Dish.Name.ToLower() != "potato") && t.Dish.TypeId == dish.TypeId);
         }
 
     }
